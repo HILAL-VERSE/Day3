@@ -1,0 +1,6 @@
+number1 = int(input("Enter first number: "))
+number2 = int(input("Enter second number: "))
+print(f"Total of {number1 + number2}")
+print(f"Sebstracted value {number1 - number2}")
+print(f"product value {number1 * number2}")
+print(f"Divides Value value {number1 / number2}")

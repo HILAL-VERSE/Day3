@@ -1,0 +1,17 @@
+name = input("Enter Your Name : ")
+dreamCompany =  input("Enter Your Dream Company: ")
+dreamRole = input("Enter Your Dream Your Dream Role: ")
+dreamSalary = input("Enter Your Dream Salary: ")
+
+print("\n")
+print("==========================")
+print("       CAREER CARD        ")
+print("==========================")
+print("\n")
+print(f"Name : {name}")
+print(f"Dream Company : {dreamCompany}")
+print(f"Dream Role : {dreamRole}")
+print(f"Dream Salary : {dreamSalary}")
+print("\n")
+print("Keep Learning and Keep Growing")
+      
