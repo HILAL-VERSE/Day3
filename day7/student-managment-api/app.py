@@ -101,6 +101,41 @@ def remove_student(id):
         "message": "Could not find matching data"
     }), 404
 
+# day 8 task
+
+@app.route('/update-student/<id>', methods=['PUT'])
+def update_student(id):
+    id = int(id)
+    data = request.get_json()
+    for student in students:
+        if student["id"] == id:
+            if "name" in data:
+                student["name"] = data["name"]
+            if "age" in data:
+                student["age"] = data["age"]
+            if "college" in data:
+                student["college"] = data["college"]
+            if "branch" in data:
+                student["branch"] = data["branch"]
+            return jsonify({"message": "Student updated successfully", "student": student}), 200
+
+    return jsonify({"message": "Student not found"}), 404 
+
+@app.route('/student-count/', methods=['GET'])
+def get_student_count():
+    student_count = len(students)
+    return jsonify(student_count)
+
+@app.route('/search-student-branch/<branch>', methods = ['GET'])
+def search_student_by_branch(branch):
+    results = []
+    for student in students:
+        if student["branch"].lower() == branch.lower():
+            results.append(student)
+    if len(results) == 0:
+        return jsonify({"message": "nothing matches your value"}), 404
+    else:
+        return jsonify(results), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
